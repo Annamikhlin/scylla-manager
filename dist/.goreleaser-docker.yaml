@@ -1,7 +1,7 @@
 project_name: scylla-manager
 dist: release-docker
 builds:
-- skip: true
+  - skip: true
 
 dockers:
   - ids:
