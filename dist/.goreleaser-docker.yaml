@@ -1,6 +1,15 @@
 project_name: scylla-manager
 dist: release-docker
 version: 2
+
+# This config only builds and pushes container images (controlled by the
+# per-image 'skip_push' fields). It must never publish a GitHub release:
+# without this, goreleaser defaults to creating a release on the checkout's
+# origin, which fails (404) when building from a fork or any repo where the
+# CI token lacks release permissions.
+release:
+  disable: true
+
 builds:
 - skip: true
 
